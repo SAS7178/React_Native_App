@@ -1,36 +1,32 @@
 import React, { useState } from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View, ImageBackground } from "react-native";
-import { Header } from "react-native/Libraries/NewAppScreen";
 
-const image = {  uri: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60" };
+const image = { uri: "https://reactjs.org/logo-og.png" };
 
-const App = () => {
-  
+const HomePage = () => {
   const [modalVisible, setModalVisible] = useState(false);
-
   return (
-    <>
-    <Header></Header>
     <View style={styles.centeredView}>
-      <ImageBackground source={image} resizeMode="cover" style={styles.image}>
-    <Text style={styles.textStyle}>Cohort 57!!!</Text>
-    <Text style={styles.textStyle}>Welcome!!!</Text>
+            <View  style={styles.centeredView}>
+            <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+      </ImageBackground>
+            </View>
       <Modal
         animationType="slide"
         transparent={true}
         visible={modalVisible}
         onRequestClose={() => {
-          Alert.alert("Modal has been closed.");
+            Alert.alert("Modal has been closed.");
           setModalVisible(!modalVisible);
         }}
       >
         <View style={styles.centeredView}>
           <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!!!</Text>
+            <Text style={styles.modalText}>Hello</Text>
             <Pressable
               style={[styles.button, styles.buttonClose]}
               onPress={() => setModalVisible(!modalVisible)}
-              >
+            >
               <Text style={styles.textStyle}>Hide Modal</Text>
             </Pressable>
           </View>
@@ -39,12 +35,10 @@ const App = () => {
       <Pressable
         style={[styles.button, styles.buttonOpen]}
         onPress={() => setModalVisible(true)}
-        >
+      >
         <Text style={styles.textStyle}>Show Modal</Text>
       </Pressable>
-        </ImageBackground>
     </View>
-    </>
   );
 };
 
@@ -55,11 +49,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 22
   },
-  image: {
-    flex: 1,
-    width: 400,
-    justifyContent: "center"
-  },
   modalView: {
     margin: 20,
     backgroundColor: "white",
@@ -68,7 +57,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
-      width: 1,
+      width: 0,
       height: 2
     },
     shadowOpacity: 0.25,
@@ -76,14 +65,11 @@ const styles = StyleSheet.create({
     elevation: 5
   },
   button: {
-    justifyContent: "center",
     borderRadius: 20,
-    padding: 12,
-    elevation: 1
+    padding: 10,
+    elevation: 2
   },
   buttonOpen: {
-    justifyContent: "center",
-    width: '40%',
     backgroundColor: "#F194FF",
   },
   buttonClose: {
@@ -100,4 +86,5 @@ const styles = StyleSheet.create({
   }
 });
 
-export default App;
+export default HomePage;
+
