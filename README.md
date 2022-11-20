@@ -3,7 +3,7 @@
 
 In this project I've graduated Nashville Software School this  mobile application is something I was curious about so I'm giving it a go! This will be my ongoing test Repo.
 
-The goal, in this application, was to impliment react native utilize expo go instead of a desktop emulator tool. 
+The goal, in this application, was to implement react native utilize expo go instead of a desktop emulator tool. 
 I want to get more familiar with JAVA and C++ and utilize assortments of react native components and styling.
 
 This project was is first React Native mobile application
